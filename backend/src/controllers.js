@@ -23,7 +23,7 @@ export const handleCreateTasks = (req, res) => {
     body.date,
   ]);
 
-  res.json("Task has been created successfully");
+  res.status(200).json({ message: "Task has been created successfully" });
 };
 
 export const handleUpdateTasks = (req, res) => {
@@ -33,11 +33,11 @@ export const handleUpdateTasks = (req, res) => {
     req.body.date,
     bookId,
   ]);
-  res.json("Task has been updated successfully");
+  res.status(200).json({ message: "Task has been updated successfully" });
 };
 
 export const handleDeleteTasks = (req, res) => {
   const bookId = req.params.id;
   db.run("DELETE FROM task WHERE id = ?", [bookId]);
-  res.json("Task has been deleted successfully");
+  res.status(200).json({ message: "Task has been deleted successfully" });
 };
