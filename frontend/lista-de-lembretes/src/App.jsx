@@ -1,14 +1,18 @@
-import './App.css'
-import { TodoForm } from './components/TodoForm'
-import TodoList from './components/TodoList'
-
+import { TodoForm } from "./components/TodoForm";
+import TodoList from "./components/TodoList";
+import TaskProvider from "./contexts/Task";
+import styles from "./components/styles.module.scss";
 function App() {
   return (
-    <div>
-      <TodoForm />
-      <TodoList />
-    </div>
-  )
+    <TaskProvider>
+      <div className={styles.container}>
+        <main className={styles.principal}>
+          <TodoForm />
+          <TodoList />
+        </main>
+      </div>
+    </TaskProvider>
+  );
 }
 
-export default App
+export default App;

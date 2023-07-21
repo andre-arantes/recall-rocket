@@ -1,49 +1,39 @@
-import { useState, useEffect } from "react"
-import axios from 'axios'
+import { useTasks } from "../hooks/useTasks";
+import Task from "./Task";
+import styles from "./styles.module.scss";
+
 const TodoList = () => {
-  const [tasks, setTasks] = useState([])
+  const { tasks } = useTasks();
 
-  useEffect(() => {
-    const fetchAllTasks = async() => {
-      try {
-        const res = await axios.get('http://localhost:8800/api/tasks')
-        setTasks(res.data)
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    fetchAllTasks()
-    })
+  const sortedTasks = [...tasks].sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateA - dateB;
+  });
 
-    const handleDelete = async(id) => {
-      try {
-        await axios.delete("http://localhost:8800/api/tasks/"+id)
-      } catch (err) {
-        console.log(err);
-      }
-    } 
-
-    const handleUpdate = async(id) => {
-      try {
-        await axios.put("http://localhost:8800/api/tasks/"+id)
-      } catch (err) {
-        console.log(err);
-      }
-    } 
+  let prevDate = null;
   return (
-    <div>
-      <div className="tasks">
-      {tasks.map(task=>(
-        <div className="task" key={task.id}>
-          <h2>{task.name}</h2>
-          <h2>{task.date}</h2>
-          <button onClick={() => handleUpdate(task.id)}>Update</button>
-          <button onClick={() => handleDelete(task.id)}>Delete</button>
-        </div>
-      ))}
+    <div className={styles.listaWrapper}>
+      <div className={styles.lista}>
+        {sortedTasks.map((task) => {
+          const currentDate = new Date(task.date);
+          const formattedDate = currentDate.toLocaleDateString("pt-BR", {
+            timeZone: "UTC",
+          });
+          const showDate = prevDate !== currentDate.getTime();
+          prevDate = currentDate.getTime();
+          return (
+            <Task
+              task={task}
+              key={task.id}
+              showDate={showDate}
+              formattedDate={formattedDate}
+            />
+          );
+        })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TodoList
+export default TodoList;
