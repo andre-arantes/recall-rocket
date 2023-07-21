@@ -13,6 +13,8 @@ Para executar o projeto localmente:
 3. Navegue para a pasta backend e inicie o servidor com "npm start".
 4. Em outro terminal navegue para a pasta "frontend" e inicie o servidor de desenvolvimento com "npm run dev".
 
+Observação: é recomendado usar a versão 16 ou superiores do Node.js para garantir o funcionamento adequado do projeto.
+
 ### Configuração de Ambiente
 
 O arquivo `.env` contém a URL da API para comunicação com o back-end, e seu conteúdo foi deixado visível apenas para facilitar a execução do código.
