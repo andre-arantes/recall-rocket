@@ -9,7 +9,7 @@
     "start": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "André Arantes",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

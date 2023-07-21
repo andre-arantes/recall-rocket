@@ -14,13 +14,6 @@ app.get("/", (req, res) => {
 
 app.use("/api", router);
 
-// app.post("/task", (req, res) => {
-//   console.log(req.body);
-//   res.json({
-//     statusCode: 200,
-//   });
-// });
-
 app.listen(8800, () => {
   const q = "SELECT * FROM task";
   const test = db.get(q, (res) => console.log(res));
