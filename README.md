@@ -10,7 +10,8 @@ Para executar o projeto localmente:
 
 1. Clone o repositório.
 2. Instale as dependências usando "npm install" ou "yarn install".
-3. Inicie o servidor de desenvolvimento com "npm run dev" ou "yarn dev".
+3. Navegue para a pasta backend e inicie o servidor com "npm start"
+4. Em outro terminal navegue para a pasta "frontend" e inicie o servidor de desenvolvimento com "npm run dev"
 
 ### Configuração de Ambiente
 

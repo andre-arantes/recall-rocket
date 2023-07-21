@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import { db } from "./src/db/index.js";
 import router from "./src/routes.js";
 
 const app = express();
@@ -15,7 +14,5 @@ app.get("/", (req, res) => {
 app.use("/api", router);
 
 app.listen(8800, () => {
-  const q = "SELECT * FROM task";
-  const test = db.get(q, (res) => console.log(res));
-  console.log(test);
+  console.log("Server is now listening on port 8800");
 });
