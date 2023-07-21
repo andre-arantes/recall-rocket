@@ -1,6 +1,6 @@
 # Sistema de criação de lembretes - André Arantes
 
-![print-sistema-de-lembretes](https://github.com/andre-arantes/lista-de-tarefas/assets/83238593/c9703d1a-2e39-44ab-b50c-6ce16648e640)
+![print-sistema-de-lembretes](https://github.com/andre-arantes/lista-de-lembretes/assets/83238593/35adef98-3dba-42f2-9c14-835849fa4710)
 
 Repositório do sistema de criação de lembretes desenvolvido para o processo seletivo da dti digital.
 
