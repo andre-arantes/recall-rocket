@@ -1,4 +1,4 @@
-# Sistema de criação de lembretes - André Arantes
+# RecallRocket
 
 ![print-sistema-de-lembretes](https://github.com/andre-arantes/lista-de-lembretes/assets/83238593/35adef98-3dba-42f2-9c14-835849fa4710)
 
