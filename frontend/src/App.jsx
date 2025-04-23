@@ -1,6 +1,6 @@
-import { TodoForm } from "./components/TodoForm";
-import TodoList from "./components/TodoList";
-import TaskProvider from "./contexts/Task";
+import { TodoForm } from "./components/TodoForm.jsx";
+import TodoList from "./components/TodoList.jsx";
+import TaskProvider from "./contexts/Task.jsx";
 import styles from "./components/styles.module.scss";
 function App() {
   return (
